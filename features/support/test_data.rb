@@ -1,5 +1,5 @@
 def wiw_username
-  wiw_username = 'jonesymox@gmail.com'
+  wiw_username = 'testuser@gmail.com'
 end
 
 def wiw_password
