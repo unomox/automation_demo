@@ -10,7 +10,7 @@
 ```
 gem install bundler
 ```
-### From root enter command:
+### From project root enter command:
 ```
 bundle install
 ```
