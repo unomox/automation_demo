@@ -28,3 +28,9 @@ Feature: Login Page
     Then I should see a validation error for the Password field
     Then I should see the Log In button is disabled
 
+  Scenario: User enters bad username/password
+    Given I have navigated to the homepage
+    When I enter an email which is not in the system
+    And I enter password "asdf"
+    And I click Log in
+    Then I should see validation error "Incorrect username and/or password. Please try again."
