@@ -1,9 +1,9 @@
 Before do
-  @driver = Selenium::WebDriver.for :firefox
+  #@driver = Selenium::WebDriver.for :firefox
 end
 
 After do
-  @driver.quit
+  #@driver.quit
 end
 
 # Before do |scenario|
