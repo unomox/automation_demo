@@ -1,5 +1,5 @@
 Feature: User Login
-  Scenario: example
+  Scenario: as a user I succesfully log in
     Given example
     And example
     When example
