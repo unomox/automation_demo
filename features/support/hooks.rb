@@ -1,9 +1,9 @@
 Before do
-  #@driver = Selenium::WebDriver.for :firefox
+  @driver = Selenium::WebDriver.for :firefox
 end
 
 After do
-  #@driver.quit
+  @driver.quit
 end
 
 # Before do |scenario|
@@ -25,10 +25,9 @@ end
 
 # #Tagged hooks
 
-# Before('@Ex_tag1, @Ex_tag2') do
-  # # This will only run before scenarios tagged
-  # # with @Ex_tag1 OR @Ex_tag2.
-# end
+Before('@loginTests') do
+  printf('Running login tests')
+end
 
 # AfterStep('@Ex_tag1, @Ex_tag2') do |scenario|
   # # This will only run after steps within scenarios tagged

@@ -3,19 +3,16 @@ require 'selenium-webdriver'
 require 'rspec'
 
 class LoginPage
-  def log_in_with_google_button
-    log_in_with_google_button=[:xpath,'//button[@class="btn-google-login btn btn-primary btn-block"]']
+  def login_button
+    login_button=[:css, '#global-nav > nav > div.asnav-content__login > div > a']
   end
-  def email_address_field
-    email_address_field=[:id,'email']
+  def email_username_field
+    email_username_field=[:css, '#AdultSwimLoginForm-loginID']
   end
   def password_field
-    password_field=[:id,'password']
+    password_field=[:css, '#AdultSwimLoginForm-password']
   end
-  def log_in_button
-    log_in_button =[:xpath,'//button[@type="submit"]']
-  end
-  def forgot_password_button
-    forgot_password_button =[:xpath,'//a[@href="/forgot"]']
+  def signin_button
+    signin_button=[:css, '#AdultSwimLoginForm > div:nth-child(1) > div > div:nth-child(7) > div > button']
   end
 end
