@@ -9,7 +9,7 @@ Dir[File.join(__dir__, 'pages', '*.rb')].each { |file| require file }
 signup = SignupPage.new
 
 Given("I have navigated to {string}") do |url|
-  @driver.navigate.to url
+  navigate(url)
 end
 
 And("I select the Login button") do
