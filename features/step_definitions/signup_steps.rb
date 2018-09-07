@@ -9,8 +9,17 @@ Dir[File.join(__dir__, 'pages', '*.rb')].each { |file| require file }
 
 signuppage = SignupPage.new
 
+def signup_with(signuppage, b_month, b_day, b_year, username, email, password, password_retype)
+  input_text(signuppage.birth_month_field,b_month)
+  input_text(signuppage.birth_day_field,b_day)
+  input_text(signuppage.birth_year_field,b_year)
+  input_text(signuppage.username_field,username)
+  input_text(signuppage.email_field,email)
+  input_text(signuppage.password_field,password)
+  input_text(signuppage.password_retype_field,password_retype)
+end
 Given(/^I navigate to adultswim.com$/) do
-  navigate (homepage_url)
+  navigate(homepage_url)
 end
 
 And(/^I click the login button$/) do
@@ -22,43 +31,19 @@ And(/^I click the Not Registered Start Here button$/) do
 end
 
 And(/^I enter my information$/) do
-  input_text(signuppage.birth_month_field,birth_month)
-  input_text(signuppage.birth_day_field,birth_day)
-  input_text(signuppage.birth_year_field,birth_year)
-  input_text(signuppage.username_field,as_username)
-  input_text(signuppage.email_field,as_email)
-  input_text(signuppage.password_field,as_password)
-  input_text(signuppage.password_retype_field,as_password)
+  signup_with(signuppage, birth_month, birth_day, birth_year, as_username, as_email, as_password, as_password)
 end
 
 And(/^I enter my information with an invalid user name$/) do
-  input_text(signuppage.birth_month_field,birth_month)
-  input_text(signuppage.birth_day_field,birth_day)
-  input_text(signuppage.birth_year_field,birth_year)
-  input_text(signuppage.username_field,invalid_as_username)
-  input_text(signuppage.email_field,as_email)
-  input_text(signuppage.password_field,as_password)
-  input_text(signuppage.password_retype_field,as_password)
+  signup_with(signuppage, birth_month, birth_day, birth_year, invalid_as_username, as_email, as_password, as_password)
 end
 
 And(/^I enter my information with an invalid email address$/) do
-  input_text(signuppage.birth_month_field,birth_month)
-  input_text(signuppage.birth_day_field,birth_day)
-  input_text(signuppage.birth_year_field,birth_year)
-  input_text(signuppage.username_field,as_username)
-  input_text(signuppage.email_field,invalid_as_email)
-  input_text(signuppage.password_field,as_password)
-  input_text(signuppage.password_retype_field,as_password)
+    signup_with(signuppage, birth_month, birth_day, birth_year, as_username, invalid_as_email, as_password, as_password)
 end
 
 And(/^I enter my information with unmatching password re-enter$/) do
-  input_text(signuppage.birth_month_field,birth_month)
-  input_text(signuppage.birth_day_field,birth_day)
-  input_text(signuppage.birth_year_field,birth_year)
-  input_text(signuppage.username_field,as_username)
-  input_text(signuppage.email_field,as_email)
-  input_text(signuppage.password_field,as_password)
-  input_text(signuppage.password_retype_field,as_password2)
+    signup_with(signuppage, birth_month, birth_day, birth_year, as_username, as_email, as_password, as_password2)
 end
 
 And(/^I check the terms of service box$/) do

@@ -5,7 +5,7 @@ require 'rspec'
 class SignupPage
 
   def login_button
-    login_button = [:xpath, '//*[@id="global-nav"]/nav/div[2]']
+    login_button = [:xpath, '/html/body/div[1]/div[2]/nav/div[2]/div/a']
   end
 
   def not_registered_button
